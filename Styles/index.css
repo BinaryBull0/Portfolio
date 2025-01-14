@@ -8,7 +8,7 @@
 
 body {
     background-color: rgba(9, 12, 23, 1);
-    overflow-x: hidden!important;
+    overflow: hidden!important;
     font-family: Arial, sans-serif;
     /* Added default font for consistency */
 }

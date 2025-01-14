@@ -145,6 +145,21 @@ body {
     display: none;
 }
 
+    .nav-list-s{
+        position: absolute; /* Position it relative to the viewport */
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 0vw;
+        z-index: 6;
+        background-color: rgba(9, 12, 23, 1);
+
+        display: flex;
+        flex-direction: column;
+        list-style: none
+    }
+
+
 
 
 /* Media Queries */

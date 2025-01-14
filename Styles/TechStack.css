@@ -1,0 +1,112 @@
+/* Main content */
+.body_contain {
+    display: flex;
+    justify-content: flex-start!important;
+    align-items: flex-start!important;
+    flex-grow: 1;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Tech Stack Section - Grid Layout */
+.tech-stack-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    gap: 20px;
+    width: 100%;
+    animation: slideInUp 1s ease-in-out;
+}
+
+/* Tech Stack Categories */
+.tech-stack-category {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+    cursor: pointer; /* Cursor pointer to indicate interactivity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow applied */
+}
+
+/* Grow animation and box-shadow on hover */
+.tech-stack-category:hover {
+    background-color: #d1d1d1;
+    transform: scale(1.05); /* Slightly grow the box */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced box-shadow on hover */
+}
+
+/* Tech Stack Category Titles */
+.tech-stack-category h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* List Items in Tech Stack Categories */
+.tech-stack-category ul {
+    list-style-type: none;
+}
+
+.tech-stack-category ul li {
+    margin: 10px 0;
+}
+
+.tech-stack-category ul li strong {
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    /* Medium screen (Tablet or small desktop) */
+    .tech-stack-section {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Small screen (Mobile) */
+    .tech-stack-section {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Box Shadow & Grow Animation on Hover */
+.tech-stack-category:hover {
+    transform: scale(1.05); /* Slightly grow the box */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow on hover */
+}
+
+

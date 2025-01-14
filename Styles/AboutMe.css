@@ -1,0 +1,214 @@
+/* About page container */
+.AboutPage {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2c2c2c; /* Dark background for the About page */
+    padding: 50px; /* Increased padding for more space */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Larger shadow for emphasis */
+    border-radius: 12px; /* Slightly more rounded corners */
+    max-width: 1200px; /* Further increased max width */
+    width: 100%;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Start from below */
+    animation: fadeInUp 1s forwards; /* Animation to fade in and move up */
+}
+
+/* Profile image */
+.pf_img {
+    width: 210px; /* Much larger profile image */
+    height: 210px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ddd; /* Thicker border */
+    opacity: 0; /* Initially hidden for animation */
+    transform: scale(0.8); /* Start smaller */
+    animation: scaleIn 1.2s ease-in-out 0.3s forwards; /* Scale and fade in */
+}
+
+/* Profile data container */
+.profile_data {
+    margin-left: 50px; /* More space between the image and text */
+    max-width: 700px; /* Further increased max width for text container */
+}
+
+/* Name style */
+.name {
+    font-size: 38px; /* Much larger font for name */
+    font-weight: bold;
+    color: #f1f1f1; /* Light color for text on dark background */
+    margin-bottom: 20px; /* Increased margin for spacing */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateX(-50px); /* Start from the left */
+    animation: slideInLeft 1s forwards 0.4s; /* Slide in from left with a delay */
+}
+
+/* Qualification style */
+.Qualification {
+    font-size: 26px; /* Larger font size for qualification */
+    color: #aaa; /* Slightly lighter gray for secondary text */
+    margin-bottom: 16px; /* Increased bottom margin */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateX(-50px); /* Start from the left */
+    animation: slideInLeft 1s forwards 0.6s; /* Slide in from left with a delay */
+}
+
+/* Birthdate style */
+.birth {
+    font-size: 22px; /* Larger font size for birthdate */
+    color: #888; /* Subtle gray for less important information */
+    margin-bottom: 25px; /* Increased margin */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateX(-50px); /* Start from the left */
+    animation: slideInLeft 1s forwards 0.8s; /* Slide in from left with a delay */
+}
+
+/* Bio style */
+.bio {
+    font-size: 18px; /* Larger font size for bio */
+    color: #ccc; /* Light gray for the bio text */
+    line-height: 1.9; /* Increased line height for readability */
+    margin-top: 20px; /* More space at the top */
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Start from below */
+    animation: fadeInUp 1s forwards 1s; /* Fade in and move up */
+}
+
+/* Animation Definitions */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+
+    /* Main content */
+    .body_contain {
+    display: flex;
+    justify-content: flex-start!important;
+    align-items: flex-start!important;
+    flex-grow: 1;
+}
+
+
+
+    .AboutPage {
+        flex-direction: column;
+        padding: 30px; /* Less padding on smaller screens */
+    }
+
+    .pf_img {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px; /* Space between image and text */
+    }
+
+    .profile_data {
+        margin-left: 0;
+        text-align: center; /* Center the text */
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .Qualification {
+        font-size: 22px;
+    }
+
+    .birth {
+        font-size: 20px;
+    }
+
+    .bio {
+        font-size: 16px;
+    }
+}
+
+/* Mobile (Phone) */
+@media (max-width: 768px) {
+    .AboutPage {
+        padding: 20px; /* Less padding for smaller screens */
+    }
+
+    .pf_img {
+        width: 150px; /* Smaller profile image */
+        height: 150px;
+        margin-bottom: 15px; /* Space between image and text */
+    }
+
+    .profile_data {
+        margin-left: 0;
+        text-align: center; /* Center the text */
+        max-width: 100%; /* Take full width on smaller screens */
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .Qualification {
+        font-size: 20px;
+    }
+
+    .birth {
+        font-size: 18px;
+    }
+
+    .bio {
+        font-size: 15px;
+    }
+}
+
+/* Small Mobile (Portrait) */
+@media (max-width: 480px) {
+    .AboutPage {
+        padding: 15px; /* Even less padding */
+    }
+
+    .pf_img {
+        width: 120px; /* Even smaller profile image */
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    .profile_data {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .Qualification {
+        font-size: 18px;
+    }
+
+    .birth {
+        font-size: 16px;
+    }
+
+    .bio {
+        font-size: 14px;
+    }
+}

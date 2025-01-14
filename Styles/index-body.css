@@ -1,0 +1,98 @@
+/* Body Section */
+.body_contain {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.home_img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Apply slight zoom effect to the image on page load (no hover effect) */
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.home_img {
+    animation: zoomEffect 10s ease-in-out infinite alternate;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+/* Keyframe animation for overlay fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.writing {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .overlay {
+        padding: 1.5rem;
+        width: 80%;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .writing {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 1rem;
+        width: 90%;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .writing {
+        font-size: 1rem;
+    }
+}

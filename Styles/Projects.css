@@ -1,0 +1,134 @@
+/* Main content */
+.body_contain {
+    display: flex;
+    justify-content: flex-start!important;
+    align-items: flex-start!important;
+    flex-grow: 1;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+    flex-wrap: wrap; /* Allow boxes to wrap in smaller screens */
+}
+
+/* Projects Page Styles */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.project-image img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-details h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.project-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.project-details p strong {
+    color: #333;
+}
+
+.project-link {
+    font-size: 16px;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #0056b3;
+}
+
+.and-more {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.and-more h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.and-more p {
+    font-size: 16px;
+    color: #555;
+}
+
+.and-more .project-link {
+    font-size: 16px;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.and-more .project-link:hover {
+    color: #0056b3;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-details h2 {
+        font-size: 20px;
+    }
+
+    .project-details p {
+        font-size: 14px;
+    }
+
+    .project-link {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <title>Projects</title>
+
+    <link rel="stylesheet" href="../Styles/index.css">
+    <link rel="stylesheet" href="../Styles/Projects.css">
+</head>
+
+<body>
+    <div class="full">
+        <div class="header">
+            <a class="Logo" href="../index.html">
+                <img class="Logo" src="../images/Binary_Bull.png" alt="Logo">
+            </a>
+
+            <ul class="small_sc">
+                <li class="nav-elem-1" id="a" onclick="toggleShadow()"><i class="fa-solid fa-bars"></i></li>
+            </ul>
+
+            <ul class="nav-list">
+                <li class="nav-elem"><a href="../Pages/AboutMe.html">About Me</a></li>
+                <li class="nav-elem"><a href="../Pages/TechStack.html">Tech Stack</a></li>
+                <li class="nav-elem"><a href="../Pages/Experience.html">Experience</a></li>
+                <li class="Xtra"><a href="../Pages/Projects.html">Projects</a></li>
+            </ul>
+
+            <ul class="nav-list">
+                <li class="nav-elem"><a href="../Pages/Contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="body_contain">
+            <div class="projects-container">
+
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/Attendance.gif" alt="Project 1">
+                    </div>
+                    <div class="project-details">
+                        <h2>Attendance System</h2>
+                        <p>A Web-based Attendance System with Admin, Management and User Plannels. Attendance is received with auto Geo Stamping and Timing, Photo Upload Required to be done manually.</p>
+                        <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, PHP, React</p>
+                        <!-- <a href="#" target="_blank" class="project-link">View Project</a> -->
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/Stormy_Ocean.gif" alt="Project 4">
+                    </div>
+                    <div class="project-details">
+                        <h2>Stormy Ocean</h2>
+                        <p>A Procedural Wave System made with Grease Pencil Lightning cutsom Texture and Animtion with Shrinkwarp Modifiers, Volume Shaders, and other Blender functionality with nothing exported from outside.</p>
+                        <p><strong>Technologies Used:</strong> Blender 3D</p>
+                        <a href="https://youtu.be/TPukK2wV0ks?si=_QT1eyJmlUGP1JtX" target="_blank" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/Butterfly_Final_30fps_hq.gif" alt="Project 3">
+                    </div>
+                    <div class="project-details">
+                        <h2>Butterfly In Motion</h2>
+                        <p>Made Using Blender 3D showing an animated camera path and using various Emmition Textures and Genometry Nodes to Procedurally Generate the flapping of its wings</p>
+                        <p><strong>Technologies Used:</strong> Blender 3D</p>
+                        <a href="https://youtu.be/HdsQhUovYXQ?si=ZNkYXp_RsMzZeh7l" target="_blank" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/Insurance_web.gif" alt="Project 2">
+                    </div>
+                    <div class="project-details">
+                        <h2>Insurance Website</h2>
+                        <p>A simple static website for insurance with the home page and trevl page to be viewed as a template for purchase idea and modification as required.</p>
+                        <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, PHP, SQL</p>
+                        <!-- <a href="#" target="_blank" class="project-link">View Project</a> -->
+                    </div>
+                </div>
+
+                <!-- "And Many More" Section -->
+                <div class="and-more">
+                    <h2>And Many More...</h2>
+                    <!-- <p>Explore a wide range of projects showcasing my skills and creativity.</p> -->
+                    <!-- <a href="#" class="project-link">Browse All Projects</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="shadow" onclick="toggleShadow()"></div>
+    <ul class="nav-list-s">
+        <li class="nav-elem-s" id="a"><a href="../Pages/AboutMe.html">About Me</a></li>
+        <li class="nav-elem-s" id="t"><a href="../Pages/TechStack.html">Tech Stack</a></li>
+        <li class="nav-elem-s" id="e"><a href="../Pages/Experience.html">Experience</a></li>
+        <li class="nav-elem-s" id="p"><a href="../Pages/Projects.html">Projects</a></li>
+        <li class="nav-elem-s" id="c"><a href="../Pages/Contact.html">Contact</a></li>
+    </ul>
+    </div>
+
+    <script>
+        var flag = -1;
+        var toggle = false;
+
+        function toggleShadow() {
+            flag = 0;
+            toggle = !toggle;
+
+            const shadow = document.querySelector('.shadow');
+            const nav_side = document.querySelector('.nav-list-s');
+            if (flag === 0 && toggle) {
+                shadow.classList.add('moveIn');
+                shadow.classList.remove('moveOut');
+                nav_side.classList.add('moveInNav');
+                nav_side.classList.remove('moveOutNav');
+            }
+            else if (!toggle) {
+                shadow.classList.remove('moveIn');
+                shadow.classList.add('moveOut');
+                nav_side.classList.remove('moveInNav');
+                nav_side.classList.add('moveOutNav');
+
+            }
+
+        }
+    </script>
+    </div>
+</body>
+
+</html>

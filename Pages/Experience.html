@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../Styles/index.css">
+    <link rel="stylesheet" href="../Styles/Experience.css">
+</head>
+
+<body>
+
+    <div class="full">
+
+        <div class="header">
+            <a class="Logo" href="../index.html">
+                <img class="Logo" src="../images/Binary_Bull.png" alt="Logo">
+            </a>
+
+            <ul class="small_sc">
+                <li class="nav-elem-1" id="a" onclick="toggleShadow()"><i class="fa-solid fa-bars"></i></li>
+            </ul>
+
+            <ul class="nav-list">
+                <li class="nav-elem"><a href="../Pages/AboutMe.html">About Me</a></li>
+                <li class="nav-elem"><a href="../Pages/TechStack.html">Tech Stack</a></li>
+                <li class="Xtra"><a href="../Pages/Experience.html">Experience</a></li>
+                <li class="nav-elem"><a href="../Pages/Projects.html">Projects</a></li>
+            </ul>
+
+            <ul class="nav-list">
+                <li class="nav-elem"><a href="../Pages/Contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="body_contain">
+            <div class="experience-content">
+                <div class="experience-box">
+                    <h2>1. Amrit Cement Limited | Database Management Executive | Computer Engineer</h2>
+                    <p><strong>14th March – 1st October (2023)</strong></p>
+                    <ul>
+                        <li>Analyzed current and past data and created an automated management system.</li>
+                        <li>Developed apps with integrated ChatGPT systems.</li>
+                        <li>Created workflows for all levels with automated responses, integrated with auto-triggering
+                            systems such as WhatsApp, Telegram, and email as required by the company.</li>
+                        <li>Integrated ChatGPT with the existing management system to make it more robust.</li>
+                        <li>Trained new employees in similar roles and responsibilities within the company.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-box">
+                    <h2>2. Freelancing</h2>
+                    <p><strong>1st October (2023) – 30th September (2024)</strong></p>
+                    <ul>
+                        <li>Worked on various small-scale web development projects, Blender models, animated videos, and
+                            other projects as requested by clients.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-box">
+                    <h2>3. WEMS Group – WEMS Security & DD Services Pvt. Ltd. Technology Branch (90 days Internship)
+                    </h2>
+                    <p><strong>1st October (2024) – 31st December (2024)</strong></p>
+                    <ul>
+                        <li>Team Lead: Worked as a Full Stack Developer with expertise in HTML, CSS, JavaScript, PHP,
+                            SQL, ChatGPT, ReactJS, NodeJS, and DLT.</li>
+                        <li>Also served as an HR and Admin personnel, overseeing team coordination and management tasks.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="shadow" onclick="toggleShadow()"></div>
+    <ul class="nav-list-s">
+        <li class="nav-elem-s" id="a"><a href="../Pages/AboutMe.html">About Me</a></li>
+        <li class="nav-elem-s" id="t"><a href="../Pages/TechStack.html">Tech Stack</a></li>
+        <li class="nav-elem-s" id="e"><a href="../Pages/Experience.html">Experience</a></li>
+        <li class="nav-elem-s" id="p"><a href="../Pages/Projects.html">Projects</a></li>
+        <li class="nav-elem-s" id="c"><a href="../Pages/Contact.html">Contact</a></li>
+    </ul>
+    </div>
+
+    <script>
+        var flag = -1;
+        var toggle = false;
+
+        function toggleShadow() {
+            flag = 0;
+            toggle = !toggle;
+
+            const shadow = document.querySelector('.shadow');
+            const nav_side = document.querySelector('.nav-list-s');
+            if (flag === 0 && toggle) {
+                shadow.classList.add('moveIn');
+                shadow.classList.remove('moveOut');
+                nav_side.classList.add('moveInNav');
+                nav_side.classList.remove('moveOutNav');
+            }
+            else if (!toggle) {
+                shadow.classList.remove('moveIn');
+                shadow.classList.add('moveOut');
+                nav_side.classList.remove('moveInNav');
+                nav_side.classList.add('moveOutNav');
+
+            }
+
+        }
+    </script>
+
+
+    </div>
+
+</body>
+
+</html>

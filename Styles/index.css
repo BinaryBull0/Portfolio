@@ -8,52 +8,60 @@
 
 body {
     background-color: rgba(9, 12, 23, 1);
-    overflow: hidden!important;
-    font-family: Arial, sans-serif;
+    overflow-x: hidden !important;
+    font-family: 'Arial', sans-serif;
     /* Added default font for consistency */
+    color: black;
+    /* Improved text contrast */
 }
 
 /* Full Page Container */
 .full {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Header and Navbar */
 .header {
     width: 100%;
     height: 20vh;
-    /* Use vh for consistent height scaling */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 2em;
+    padding: 0 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Added subtle border for separation */
 }
 
 /* Logo Styling */
 .Logo {
     height: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
     /* Smooth hover animation */
 }
 
 .Logo:hover {
     cursor: pointer;
     transform: scale(1.05);
-    /* Slightly enlarges the logo on hover */
+    filter: brightness(1.2);
+    /* Adds brightness effect on hover */
 }
 
 /* Navigation List */
 .navList {
     display: flex;
     gap: 2em;
-    /* Flex-direction row is the default, no need to specify */
+    align-items: center;
 }
 
 .nav-list {
     color: white;
     list-style: none;
-    /* Simplified property */
     display: flex;
     gap: 2em;
 }
@@ -61,18 +69,16 @@ body {
 .nav-elem {
     font-size: 20px;
     position: relative;
-    /* Enables pseudo-element for underline effect */
     transition: color 0.3s ease;
     /* Smooth transition for hover effects */
+    padding: 0.5em;
+    /* Improved click area */
 }
 
 .nav-elem a {
     text-decoration: none !important;
-    /* Ensures underline is removed */
     color: inherit !important;
-    /* Forces color inheritance */
     display: block;
-    /* Ensures the whole list item is clickable */
 }
 
 .nav-elem:hover {
@@ -88,7 +94,9 @@ body {
     height: 2px;
     background: #ed0101;
     transition: width 0.3s ease;
-    /* Smooth underline animation */
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .nav-elem:hover::after {
@@ -98,7 +106,6 @@ body {
 /* Body for all pages General */
 .body_contain {
     position: relative;
-    /* For positioning overlay */
     width: 100%;
     height: 80%;
     display: flex;
@@ -110,10 +117,10 @@ body {
 .home_img {
     width: 100%;
     height: 100%;
-
-    min-width:500px;
-    min-height:430px;
-
+    min-width: 500px;
+    min-height: 430px;
+    object-fit: cover;
+    /* Ensures image scales properly */
 }
 
 .overlay {
@@ -121,81 +128,67 @@ body {
     text-align: center;
     color: white;
     background: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent background */
     padding: 1em;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .heading {
     font-size: 3vw;
-    /* Scalable font size */
     font-weight: bold;
     margin-bottom: 0.5em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Added text shadow for better visibility */
 }
 
 .writing {
     font-size: 2vw;
+    line-height: 1.5;
 }
 
 .active {
     color: #ed0101;
 }
 
-.small_sc{
+.small_sc {
     display: none;
 }
 
-    .nav-list-s{
-        position: absolute; /* Position it relative to the viewport */
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 0vw;
-        z-index: 6;
-        background-color: rgba(9, 12, 23, 1);
+.nav-list-s {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    z-index: 6;
+    background-color: rgba(9, 12, 23, 1);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    overflow: hidden;
+}
 
-        display: flex;
-        flex-direction: column;
-        list-style: none
-    }
-
-    .shadow {
-        opacity: 0.6;
-        position: absolute; /* Position it relative to the viewport */
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 0vw;
-        z-index: 5;
-        background-color: black;
-
-    }
-
-
-
+.extra-toggle {
+    display: none;
+}
 
 /* Media Queries */
 @media (max-width: 784px) {
-
-    .header{
+    .header {
         justify-content: space-between;
         padding: 0 30px;
     }
 
-    .small_sc{
-
+    .small_sc {
         font-size: 30px;
-
         display: block;
         color: white;
         list-style: none;
-        /* Simplified property */
         display: flex;
         gap: 2em;
-
         justify-self: flex-end;
     }
-    
+
     .nav-list {
         display: none;
     }
@@ -221,7 +214,7 @@ body {
         padding: 0.5em;
     }
 
-    .cover{
+    .cover {
         position: absolute;
         height: 100vh;
         width: 100vw;
@@ -231,93 +224,89 @@ body {
 
     @keyframes moveShadowOut {
         0% {
-            width: 100vw; 
+            width: 100vw;
         }
         100% {
-            width: 0vw; 
+            width: 0;
         }
     }
 
     @keyframes moveShadowIn {
         0% {
-            width: 0vw; 
+            width: 0;
         }
         100% {
-            width: 100vw; 
+            width: 100vw;
         }
     }
 
     .shadow {
         opacity: 0.6;
-        position: absolute; /* Position it relative to the viewport */
+        position: absolute;
         top: 0;
         right: 0;
         height: 100vh;
-        width: 0vw;
+        width: 0;
         z-index: 5;
         background-color: black;
-
     }
 
-    .moveIn{
+    .moveIn {
         animation: moveShadowIn 1s ease-in forwards;
     }
 
-    .moveOut{
+    .moveOut {
         animation: moveShadowOut 1s ease-in forwards;
     }
 
     @keyframes moveNavOut {
         0% {
-            width: 50vw; 
+            width: 50vw;
         }
         100% {
-            width: 0vw; 
+            width: 0;
         }
     }
 
     @keyframes moveNavIn {
         0% {
-            width: 0vw; 
+            width: 0;
         }
         100% {
-            width: 50vw; 
+            width: 50vw;
         }
     }
 
-    .nav-list-s{
-        position: absolute; /* Position it relative to the viewport */
+    .nav-list-s {
+        position: absolute;
         top: 0;
         right: 0;
         height: 100vh;
-        width: 0vw;
+        width: 0;
         z-index: 6;
         background-color: rgba(9, 12, 23, 1);
-
         display: flex;
         flex-direction: column;
-        list-style: none
+        list-style: none;
     }
 
-    .nav-elem-s{
+    .nav-elem-s {
         padding: 10px 25px;
         font-size: 20px;
-
     }
 
     .nav-elem-s a {
-        text-decoration: none!important;
+        text-decoration: none !important;
         color: white;
     }
 
-    .moveInNav{
+    .moveInNav {
         animation: moveNavIn 1s ease-in forwards;
     }
 
-    .moveOutNav{
+    .moveOutNav {
         animation: moveNavOut 1s ease-in forwards;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -330,7 +319,6 @@ body {
     }
 }
 
-
 .Xtra {
     font-size: 20px;
     color: red;
@@ -339,11 +327,6 @@ body {
 
 .Xtra a {
     text-decoration: none !important;
-    /* Ensures underline is removed */
     color: inherit !important;
-    /* Forces color inheritance */
     display: block;
-    /* Ensures the whole list item is clickable */
 }
-
-
